@@ -1,0 +1,3 @@
+*.pyc
+dbsqlite
+newproj/settings.py
