@@ -1,3 +1,10 @@
 *.pyc
-dbsqlite
 newproj/settings.py
+*~
+~*
+__pycache__
+*.log
+*.sqlite3
+*.swp
+.DS_Store
+*#
