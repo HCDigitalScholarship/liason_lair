@@ -21,7 +21,7 @@ class Course(models.Model):
         return self.title
 
 class Question(models.Model):
-    user = models.CharField(max_length=30, help_text='Username')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.CharField(max_length=140, help_text='Question')
     details = models.CharField(max_length=3000, help_text='Question Details')
     pub_date = models.DateTimeField('date published')
