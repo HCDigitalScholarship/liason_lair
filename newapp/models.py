@@ -1,5 +1,6 @@
 from django.db import models
-
+from datetime import datetime
+#from django.contrib.auth import User
 # Create your models here.
 
 
@@ -14,6 +15,14 @@ class Course(models.Model):
     room = models.CharField(max_length=20, help_text='Times')
     additional_info = models.CharField(max_length=20, help_text='Additional Info')
     misc_links = models.CharField(max_length=20, help_text='Misc. Links')
+
+class Question(models.Model):
+    user = models.CharField(max_length=30, help_text='Username')
+    question = models.CharField(max_length=140, help_text='Question')
+    details = models.CharField(max_length=3000, help_text='Question Details')
+    pub_date = models.DateTimeField('date published')
+
+
 
     def __str__(self):
         return self.title
