@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 #from django.contrib.auth import User
 # Create your models here.
 
@@ -18,14 +19,18 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 class Question(models.Model):
     user = models.CharField(max_length=30, help_text='Username')
     question = models.CharField(max_length=140, help_text='Question')
     details = models.CharField(max_length=3000, help_text='Question Details')
     pub_date = models.DateTimeField('date published')
 
-
+class Answer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    question = models.ManyToManyField(Question)
+    answer_text = models.CharField(max_length=3000, help_text='Answer Text')
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.title
