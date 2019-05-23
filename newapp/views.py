@@ -17,6 +17,21 @@ def index(request):
 
     #return render(request, 'index.html', {})
 
+def research(request):
+        return render(request, 'research.html',{})
+    
+def addquestion(request):
+    return render(request, 'addquestion.html',{})
+
+def about(request):
+    return render(request, 'about.html',{})
+
+def faq(request):
+    return render(request, 'faq.html',{})
+
+def contact(request):
+    return render(request, 'contact.html',{})
+
 def course(request):
     now = datetime.datetime.now()
     course = Course.objects.all()
