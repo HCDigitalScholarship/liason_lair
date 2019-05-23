@@ -27,7 +27,9 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+# We should probably  extend the User model Django has already
+# Django has name fields, so if we extend Django User model, we don't need those
 class User(models.Model):
     class_year = models.CharField(max_length=20, help_text='Class Year')
     class_year_choices = [
