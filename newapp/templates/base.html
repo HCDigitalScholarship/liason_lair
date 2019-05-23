@@ -11,10 +11,12 @@
 </head>
 
 <body>
-  {% block header %}{% endblock %}
+  {% block header %}
+  <h1>Haverford College Libraries</h1>
+  {% endblock %}
 
 {% block navbar %}
-<nav> 
+<nav>
     <ul>
       <li class="home"><a href="#">Home</a></li>
       <li class="about"><a class="active" href="#">About Us</a></li>
@@ -25,7 +27,7 @@
     </ul>
 </nav>
 {% endblock %}
-    
+
   {% block content %}
   {% endblock %}
 </body>

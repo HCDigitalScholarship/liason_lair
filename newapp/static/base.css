@@ -26,3 +26,10 @@ nav li a {
 nav li a:hover {
     background-color: #111;
 }
+
+h1 {
+    padding: 14px;
+    background-color: #C60F13;
+    color: white;
+    /* font: Lato; ???*/
+}
