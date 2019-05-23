@@ -25,7 +25,20 @@ class Question(models.Model):
     details = models.CharField(max_length=3000, help_text='Question Details')
     pub_date = models.DateTimeField('date published')
 
-
-
     def __str__(self):
         return self.title
+    
+class User(models.Model):
+    class_year = models.CharField(max_length=20, help_text='Class Year')
+    class_year_choices = [
+        ('FR', 'Freshman'),
+        ('SO', 'Sophomore'),
+        ('JR', 'Junior'),
+        ('SR', 'Senior'),
+        ('GR', 'Graduate'),
+    ]
+    first_name = models.CharField(max_length=50, help_text='First Name')
+    last_name = models.CharField(max_length=100, help_text='Last Name')
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name
