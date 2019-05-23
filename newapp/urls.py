@@ -10,4 +10,6 @@ import newapp.views as views
 
 urlpatterns = [
     path('', views.index, name='index'), #creating a view for index page
+    path('course/', views.course, name='Course'),
+    path('course/<department>', views.department, name='department')
 ]
