@@ -14,7 +14,7 @@ def index(request):
     #t = get_template('index.html')
     #html = t.render({'current_date': now})
     #return HttpResponse(html)
-    
+
     #return render(request, 'index.html', {})
 
 def course(request):
@@ -30,3 +30,10 @@ def department(request, department):
     random_course = random.choice(course)
 
     return render(request, 'index.html', {'course': random_course, 'current_date': now})
+
+def semester(request, semester):
+    now = datetime.datetime.now()
+    course = Course.objects.filter(semester=semester)
+    random_semester = random.choice(semester)
+
+    return render(request, 'index.html', {'semester': random_semester, 'current_date': now})

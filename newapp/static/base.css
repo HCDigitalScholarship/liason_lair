@@ -1,0 +1,13 @@
+/* static/base.css */
+
+/* start with navigation css */
+
+ul {
+    list-style-type: none;
+     margin: 0;
+}
+
+li {
+   /* display: block;*/
+    width: 100px;
+}
