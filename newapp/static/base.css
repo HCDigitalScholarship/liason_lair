@@ -46,3 +46,13 @@ nav li a:hover {
   background: #55ACEE;
   color: white;
 }
+
+footer {
+    padding: 1.2em 0;
+    background: #000;
+    font-family: "Fjalla One", Verdana, Geneva, sans-serif;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    text-align:center;
+    /* you probably need to add some extra styles here */
+}
