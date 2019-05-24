@@ -33,4 +33,4 @@ class QuestionForm(forms.Form):
         super().__init__(*args,**kwargs)
         self.helper = FormHelper
         self.helper.form_method = 'post'
-        self.helper.layout = Layout('question','details', 'category', Submit('submit','Submit', css_class="button green"))
+        self.helper.layout = Layout('question','answer','details', 'category', Submit('submit','Submit', css_class="button green"))
