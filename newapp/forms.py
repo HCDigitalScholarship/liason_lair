@@ -14,9 +14,10 @@ class SearchForm(forms.Form):
 #<<<<<<< HEAD
 class Qform(ModelForm):
     question = forms.CharField(label='Question', max_length=100)
+    details = forms.CharField(label='Details', max_length=1000)
     class Meta:
         model = Question
-        fields = ['question']
+        fields = ['question', 'details']
 
 #=======
 class ContactForm(forms.Form):

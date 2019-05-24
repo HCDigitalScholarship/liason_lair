@@ -22,8 +22,8 @@ class Course(models.Model):
 class Question(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.CharField(max_length=140, help_text='Question')
-    details = models.CharField(max_length=3000, help_text='Question Details')
-    pub_date = models.DateTimeField('date published')
+    details = models.CharField(max_length=3000, help_text='Question Details', default='SOME STRING')
+    #pub_date = models.DateTimeField('date published', default = 'DATE')
     pass
 
 

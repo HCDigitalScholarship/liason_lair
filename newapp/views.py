@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from django.http import HttpResponse
 import datetime
-from newapp.models import Course
+from newapp.models import Course, Question
 import random
-from .forms import ContactForm, QuestionForm
+from .forms import ContactForm, QuestionForm, Qform
 # Create your views here.
 
 
@@ -20,9 +20,10 @@ def index(request):
             # ...
             # redirect to a new URL:
             question = form.cleaned_data['question']
-            q = Question(question = question)
+            details = form.cleaned_data['details']
+            q = Question(question = question, details = details)
             q.save()
-            return HttpResponse('/thanks/')
+            return HttpResponse('Thanks')
 
     # if a GET (or any other method) we'll create a blank form
     else:
