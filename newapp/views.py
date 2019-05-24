@@ -19,7 +19,7 @@ def index(request):
     #return render(request, 'index.html', {})
 
 def research(request):
-        return render(request, 'research.html',{})
+    return render(request, 'research.html',{})
     
 def addquestion(request):
     if request.method == 'POST':

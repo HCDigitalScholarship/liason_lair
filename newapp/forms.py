@@ -26,7 +26,7 @@ class ContactForm(forms.Form):
 
 class QuestionForm(forms.Form): 
     question = forms.CharField(max_length=200)
-    details = forms.CharField(widget=forms.Textarea)
+    details = forms.CharField(widget=forms.Textarea, required=False)
     category = forms.CharField()
     #want:    category = forms.ChoiceField(Category.objects.all()) #dunno if this will work
     def __init__(self, *args, **kwargs):
