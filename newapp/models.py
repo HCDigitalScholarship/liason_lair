@@ -13,8 +13,8 @@ class Course(models.Model):
     instructor = models.CharField(max_length=200, help_text='Instructor')
     times = models.CharField(max_length=200, help_text='Times')
     room = models.CharField(max_length=200, help_text='Times')
-    additional_info = models.CharField(max_length=200, help_text='Additional Info')
-    misc_links = models.CharField(max_length=20, help_text='Misc. Links')
+    additional_info = models.TextField()
+    misc_links = models.TextField()
 
     def __str__(self):
         return self.title
