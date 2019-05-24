@@ -31,8 +31,8 @@ recent aside {
     margin-left: 0.2rem;
     float: left;
     font-style: italic;
-  width: 450px;
-  height: 500px;
+  width: 500px;
+  height: 650px;
   overflow: scroll;
    border: 5px solid brown;
 }
