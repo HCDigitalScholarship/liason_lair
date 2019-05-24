@@ -26,6 +26,38 @@ nav li a {
 nav li a:hover {
     background-color: #111;
 }
+
+/* Add a black background color to the top navigation bar */
+.searchbar {
+  overflow: hidden;
+  background-color: #E9E9E9;
+}
+
+/* Style the links inside the navigation bar */
+.searchbar  {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+/* Style the search box inside the navigation bar */
+.searchbar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.searchbar input[type=text] {
+  border: 1px solid #ccc;
+}
  .recent aside {
     padding-left: 0.2rem;
     margin-left: 0.2rem;
