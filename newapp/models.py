@@ -32,3 +32,7 @@ class Answer(models.Model):
     question = models.ManyToManyField(Question)
     answer_text = models.CharField(max_length=3000, help_text='Answer Text')
     pub_date = models.DateTimeField('date published')
+
+class Category(models.Model):
+        name = models.CharField(max_length=100, help_text='Category Name')
+        
