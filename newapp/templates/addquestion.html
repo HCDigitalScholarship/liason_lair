@@ -1,5 +1,13 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block header %}
 <h1> Ask a Question </h1>
+{% endblock %}
+
+{% block content %}
+<div  style = "padding: 20px;">
+  {% crispy form form.helper %}
+
+ </div>
 {% endblock %}

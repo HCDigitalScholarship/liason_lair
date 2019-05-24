@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
-#from django.contrib.auth import User
 # Create your models here.
 
 
@@ -25,14 +24,16 @@ class Question(models.Model):
     question = models.CharField(max_length=140, help_text='Question')
     details = models.CharField(max_length=3000, help_text='Question Details')
     pub_date = models.DateTimeField('date published')
+    pass
 
-
+  
 class Answer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ManyToManyField(Question)
     answer_text = models.CharField(max_length=3000, help_text='Answer Text')
     pub_date = models.DateTimeField('date published')
 
+<<<<<<< HEAD
 
 # We should probably  extend the User model Django has already
 # Django has name fields, so if we extend Django User model, we don't need those
@@ -54,5 +55,8 @@ class User(models.Model):
 
 
 
+=======
+>>>>>>> db7b17e56787ea97de8358d75c1f0d40dce48f60
 class Category(models.Model):
-    name = models.CharField(max_length=100, help_text='Category Name')
+        name = models.CharField(max_length=100, help_text='Category Name')
+        

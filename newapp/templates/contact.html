@@ -1,10 +1,14 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+<h1> Contact Us </h1>
+
+{% endblock %}
 
 {% block content %}
+  <div  style = "padding: 20px; width: 300px;">
+  {% crispy form form.helper %}
 
-
-<p>Throw some nice contact info in here</p>
-
-
-
-{% endblock content %}
+  </div>
+{% endblock %}

@@ -27,7 +27,5 @@ import newapp.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('newapp.urls')), # is this correct?
-    path('contact/', include('newapp.urls')),
-    path('faq/', include('newapp.urls')),
     #path('', views.index, name='index')
 ]
