@@ -1,6 +1,7 @@
 from django import forms
 from newapp.models import Course, Category, Question
 from crispy_forms.helper import FormHelper
+from django.forms import ModelForm
 from crispy_forms.layout import Layout, Submit
 
 class CourseForm(forms.Form):
@@ -11,9 +12,12 @@ class SearchForm(forms.Form):
 	search = forms.CharField(label='search', max_length=100)
 
 #<<<<<<< HEAD
-class QAForm(forms.Form):
-    question = forms.CharField(label='question', max_length=140)
-    answer = forms.CharField(label='Answer', max_length=3000)
+class Qform(ModelForm):
+    question = forms.CharField(label='Question', max_length=100)
+    class Meta:
+        model = Question
+        fields = ['question']
+
 #=======
 class ContactForm(forms.Form):
     name = forms.CharField()
@@ -26,7 +30,7 @@ class ContactForm(forms.Form):
         super().__init__(*args,**kwargs)
         self.helper = FormHelper
         self.helper.form_method = 'post'
-        self.helper.layout = Layout('name', 'email', 'category', 'subject', 'body',Submit('submit','Submit', class="button green"))
+        #self.helper.layout = Layout('name', 'email', 'category', 'subject', 'body',Submit('submit','Submit', class="button green"))
         #css class portion does not seem to work
 
 # want to be talking to Questions model, dunno if we can go crispy on this one

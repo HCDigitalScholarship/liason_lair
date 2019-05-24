@@ -10,18 +10,28 @@ from .forms import ContactForm, QuestionForm
 
 def index(request):
     now = datetime.datetime.now()
+    # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        print("we got to post")
-        form = QAForm(request.POST)
-        #search_form = SearchForm(request.POST)
+        # create a form instance and populate it with data from the request:
+        form = Qform(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            question = form.cleaned_data['question']
+            q = Question(question = question)
+            q.save()
+            return HttpResponse('/thanks/')
 
-        if form.is_valid() :
-            question = request.POST.get('question', None)
-            #search_query = request.POST.get('search', None)
-            return render(request, 'index.html', {'current_date': now, 'question': question})
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = Qform()
+    # all_questions = Question.objects.all();
+    # print(all_questions)
+    #return render(request, 'index.html', {'form': form}, {'all_questions': all_questions})
+    return render(request, 'index.html', {'form': form})
 
-        return render(request, 'index.html', {'current_date': now})
-    return render(request, 'index.html', {'current_date': now})
 
 def contact(request):
     now = datetime.datetime.now()
