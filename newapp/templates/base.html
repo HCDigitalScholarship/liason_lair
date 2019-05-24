@@ -9,6 +9,7 @@
 
 </head>
 
+<<<<<<< HEAD
   <div id = "body">
     <body>
       <div id = "header">
@@ -19,5 +20,24 @@
       <div id = "footer"> {% block footer %}{% include "footer.html" %}{% endblock %}</div>
     </body>
   </div>
+=======
+<body>
+  {% block header %}{% endblock %}
+
+{% block navbar %}
+{% include "nav.html" %}
+{% endblock %}
+    
+  {% block content %}
+  {% endblock content %}
+  
+
+
+<br>
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
+</body>
+>>>>>>> 85150f645a90271e41bb7fdab51165b8e9c8856c
 </html>
 </div>
