@@ -33,7 +33,7 @@ nav li a:hover {
     font-style: optima;
    width: 500px;
    height: 500px;
-  /*overflow: scroll;*/
+  overflow: scroll;
    border: 5px solid brown;
 }
 .recent h2 {
