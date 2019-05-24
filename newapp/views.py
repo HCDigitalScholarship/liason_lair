@@ -38,8 +38,9 @@ def research(request):
 def addquestion(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        if form2.is_valid():
+        if form.is_valid():
             question = form.cleaned_data['question']
+            answer = form.cleaned_data['answer']
             details = form.cleaned_data['details']
             category = form.cleaned_data['category']
     form = QuestionForm()

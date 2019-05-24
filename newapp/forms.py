@@ -1,5 +1,5 @@
 from django import forms
-from newapp.models import Course, Category
+from newapp.models import Course, Category, Question
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 
@@ -17,7 +17,7 @@ class QAForm(forms.Form):
 #=======
 class ContactForm(forms.Form):
     name = forms.CharField()
-    email = forms.EmailField(label='e-mail')
+    email = forms.EmailField(label='E-mail')
     category = forms.ChoiceField(choices=[('suggestions', 'Suggestions'), ('question', 'Question'), ('report error', 'Report Error'), ('other', 'Other')])
     subject = forms.CharField(required=False)
     body = forms.CharField(widget=forms.Textarea)
@@ -26,17 +26,18 @@ class ContactForm(forms.Form):
         super().__init__(*args,**kwargs)
         self.helper = FormHelper
         self.helper.form_method = 'post'
-        self.helper.layout = Layout('name', 'email', 'category', 'subject', 'body', Submit('submit','Submit', css_class="button green"))
+        self.helper.layout = Layout('name', 'email', 'category', 'subject', 'body',Submit('submit','Submit', css_class="button green"))
         #css class portion does not seem to work
 
+# want to be talking to Questions model, dunno if we can go crispy on this one
 class QuestionForm(forms.Form):
     question = forms.CharField(max_length=200)
+    answer = forms.CharField(label='Answer',widget=forms.TextInput(attrs={'placeholder': 'If you learned something, you can submit an answer.'}), required=False)
     details = forms.CharField(widget=forms.Textarea, required=False)
     category = forms.CharField()
     #want:    category = forms.ChoiceField(Category.objects.all()) #dunno if this will work
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs): #added user param...removed
         super().__init__(*args,**kwargs)
         self.helper = FormHelper
         self.helper.form_method = 'post'
-        self.helper.layout = Layout('question','details', 'category', Submit('submit','Submit', css_class="button green"))
-#>>>>>>> db7b17e56787ea97de8358d75c1f0d40dce48f60
+        self.helper.layout = Layout('question','answer','details', 'category', Submit('submit','Submit', css_class="button green"))
