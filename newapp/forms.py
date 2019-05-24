@@ -12,7 +12,7 @@ class SearchForm(forms.Form):
 
 class ContactForm(forms.Form):
     name = forms.CharField()
-    email = forms.EmailField(label='e-mail')
+    email = forms.EmailField(label='E-mail')
     category = forms.ChoiceField(choices=[('suggestions', 'Suggestions'), ('question', 'Question'), ('report error', 'Report Error'), ('other', 'Other')])
     subject = forms.CharField(required=False)
     body = forms.CharField(widget=forms.Textarea)
