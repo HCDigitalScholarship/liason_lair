@@ -1,13 +1,13 @@
 #in progress
 
-h1 {
+recentquestions h1 {
     font-family:Avenir;
     font-size: 25px;
     color: black;
     }
-p.question {   
+recentquestions p.question {   
    color: darkslategray;
   }
-p.answer{
+recentquestions p.answer{
     color:gray;
   }

@@ -4,18 +4,33 @@ from django.http import HttpResponse
 import datetime
 from newapp.models import Course
 import random
+from .forms import QAForm
 # Create your views here.
 
 
 def index(request):
     now = datetime.datetime.now()
-    return render(request, 'index.html', {'current_date': now})
-    #now = datetime.datetime.now()
-    #t = get_template('index.html')
-    #html = t.render({'current_date': now})
-    #return HttpResponse(html)
+    if request.method == 'POST':
+        print("we got to post")
+        form = QAForm(request.POST)
+        #search_form = SearchForm(request.POST)
 
-    #return render(request, 'index.html', {})
+        if form.is_valid() :
+            question = request.POST.get('question', None)
+            #search_query = request.POST.get('search', None)
+            return render(request, 'index.html', {'current_date': now, 'question': question})
+
+        return render(request, 'index.html', {'current_date': now})
+    return render(request, 'index.html', {'current_date': now})
+
+def contact(request):
+    now = datetime.datetime.now()
+    return render(request, 'contact.html', {'current_date': now})
+
+def faq(request):
+    now = datetime.datetime.now()
+    return render(request, 'faq.html', {'current_date': now})
+
 
 def course(request):
     now = datetime.datetime.now()
@@ -37,3 +52,12 @@ def semester(request, semester):
     random_semester = random.choice(semester)
 
     return render(request, 'index.html', {'semester': random_semester, 'current_date': now})
+
+# def get_answer(request):
+#     if request.method == 'POST':
+#         form = QAForm(request.POST)
+#         if form.is_valid():
+#             return HttpResponseRedirect('/thanks/')
+#     else:
+#         form = NameForm()
+#     return render(request, 'index.html', {'form': form})
