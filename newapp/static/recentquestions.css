@@ -1,13 +1,18 @@
-#in progress
-
-recentquestions h1 {
+aside {
+    width: 30%;
+    padding-left: 0.2rem;
+    margin-left: 0.2rem;
+    float: left;
+    font-style: italic;
+}
+ h2 {
     font-family:Avenir;
     font-size: 25px;
     color: black;
     }
-recentquestions p.question {   
-   color: darkslategray;
+ p.question {   
+   color: black;
   }
-recentquestions p.answer{
-    color:gray;
+p.answer{
+    color:darkslategray;
   }
