@@ -4,7 +4,7 @@ from django.http import HttpResponse
 import datetime
 from newapp.models import Course
 import random
-from .forms import ContactForm
+from .forms import ContactForm, QuestionForm
 # Create your views here.
 
 
@@ -22,7 +22,14 @@ def research(request):
         return render(request, 'research.html',{})
     
 def addquestion(request):
-    return render(request, 'addquestion.html',{})
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form2.is_valid():
+            question = form.cleaned_data['question']
+            details = form.cleaned_data['details']
+            category = form.cleaned_data['category']
+    form = QuestionForm()
+    return render(request, 'addquestion.html',{'form':form})
 
 def about(request):
     return render(request, 'about.html',{})
