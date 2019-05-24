@@ -26,7 +26,7 @@ nav li a {
 nav li a:hover {
     background-color: #111;
 }
- recent.aside {
+ .recent aside {
     padding-left: 0.2rem;
     margin-left: 0.2rem;
     /*float: left;*/
@@ -77,21 +77,8 @@ footer {
     background: #add8e6;
     font-family: "Fjalla One", Verdana, Geneva, sans-serif;
     font-size: 13px;
-    /*position: relative;*/
+    position: relative;
     /*text-transform: uppercase;*/
     /*text-align:center;*/
     /* you probably need to add some extra styles here */
-    position:absolute;
-    
-    width:100%;
-}
-
-#header {
-/*    background:#ff0;*/
-    padding:10px;
-}
-
-#container {
-    min-height:100%;
-    position:relative;
 }
