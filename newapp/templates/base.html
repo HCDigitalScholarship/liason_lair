@@ -1,4 +1,4 @@
-{% load static %}
+\{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -18,8 +18,11 @@
     
   {% block content %}
   {% endblock %}
- 
-{% include "footer.html" %}
-</body>
+  
 
+
+</body>
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
 </html>
