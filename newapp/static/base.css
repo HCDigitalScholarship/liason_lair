@@ -53,10 +53,10 @@ nav li a:hover {
 } 
 footer {
     padding: 1.2px 0;
-    background: #000;
+    background: #add8e6;
     font-family: "Fjalla One", Verdana, Geneva, sans-serif;
     font-size: 0.95px;
-    text-transform: uppercase;
-    text-align:center;
+    /*text-transform: uppercase;*/
+    /*text-align:center;*/
     /* you probably need to add some extra styles here */
 }
