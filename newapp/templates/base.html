@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
+<div id = "container">
 <head>
   <title>Liaison Lair</title>
 <!-- edit -->
@@ -9,21 +9,15 @@
 
 </head>
 
-<body>
-  {% block header %}{% endblock %}
-
-{% block navbar %}
-{% include "nav.html" %}
-{% endblock %}
-    
-  {% block content %}
-  {% endblock content %}
-  
-
-
-
-{% block footer %}
-{% include "footer.html" %}
-{% endblock %}
-</body>
+  <div id = "body">
+    <body>
+      <div id = "header">
+	{% block header %}{% endblock %}
+      </div>
+      {% block navbar %}{% include "nav.html" %}{% endblock %}
+      {% block content %}{% endblock content %}
+      <div id = "footer"> {% block footer %}{% include "footer.html" %}{% endblock %}</div>
+    </body>
+  </div>
 </html>
+</div>
