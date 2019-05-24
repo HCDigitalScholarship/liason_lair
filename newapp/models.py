@@ -26,14 +26,14 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     pass
 
-  
+
 class Answer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ManyToManyField(Question)
     answer_text = models.CharField(max_length=3000, help_text='Answer Text')
     pub_date = models.DateTimeField('date published')
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
 # We should probably  extend the User model Django has already
 # Django has name fields, so if we extend Django User model, we don't need those
@@ -53,10 +53,9 @@ class User(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-
-
-=======
->>>>>>> db7b17e56787ea97de8358d75c1f0d40dce48f60
+# 
+#
+# =======
+# >>>>>>> db7b17e56787ea97de8358d75c1f0d40dce48f60
 class Category(models.Model):
         name = models.CharField(max_length=100, help_text='Category Name')
-        
