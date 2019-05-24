@@ -27,7 +27,7 @@ class ContactForm(forms.Form):
 # want to be talking to Questions model, dunno if we can go crispy on this one
 class QuestionForm(forms.Form):
     question = forms.CharField(max_length=200)
-    answer = forms.CharField(label='search',widget=forms.TextInput(attrs={'placeholder': 'If you learned something, you can submit an answer.'}), required=False)
+    answer = forms.CharField(label='Answer',widget=forms.TextInput(attrs={'placeholder': 'If you learned something, you can submit an answer.'}), required=False)
     details = forms.CharField(widget=forms.Textarea, required=False)
     category = forms.CharField()
     #want:    category = forms.ChoiceField(Category.objects.all()) #dunno if this will work
