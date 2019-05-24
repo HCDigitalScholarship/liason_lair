@@ -7,7 +7,6 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title']
     list_filter = ['semester']
 
-
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Question)
 admin.site.register(Answer)
