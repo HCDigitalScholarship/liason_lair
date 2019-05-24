@@ -26,6 +26,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     pass
 
+  
 class Answer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ManyToManyField(Question)

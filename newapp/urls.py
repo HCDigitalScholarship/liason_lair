@@ -10,6 +10,11 @@ import newapp.views as views
 
 urlpatterns = [
     path('', views.index, name='index'), #creating a view for index page
-    path('course/', views.course, name='Course'),
-    path('course/<department>', views.department, name='department')
+#    path('course/', views.course, name='Course'),
+#    path('course/<department>', views.department, name='department'),
+    path('addquestion/', views.addquestion, name = 'addquestion'),
+    path('faq/', views.faq, name = 'faq'),
+    path('about/', views.about, name = 'about'),
+    path('contact/', views.contact, name = 'contact'),
+    path('research/', views.research, name = 'research'),
 ]

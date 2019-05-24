@@ -1,0 +1,13 @@
+#in progress
+
+recentquestions h1 {
+    font-family:Avenir;
+    font-size: 25px;
+    color: black;
+    }
+recentquestions p.question {   
+   color: darkslategray;
+  }
+recentquestions p.answer{
+    color:gray;
+  }
