@@ -1,5 +1,5 @@
 /* static/base.css */
-/* had to change something because i made a commit message "crap" */
+
 /* start with navigation css */
 /* ref: https://www.w3schools.com/css/css_navbar.asp */
 nav ul {
@@ -7,12 +7,11 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: black;
+    background-color: #333;
 }
 
 nav li {
     float: left;
-    background-color: black;
 }
 
 nav li a {
@@ -25,78 +24,91 @@ nav li a {
 
 /* Change the link color to #111 (black) on hover */
 nav li a:hover {
-    background-color: #C60F13;
+    background-color: #111;
 }
 
-<<<<<<< HEAD
-h1 {
-    padding: 14px;
-    background-color: #C60F13;
-    color: white;
-    /* font: Lato; ???*/
-=======
 /* Add a black background color to the top navigation bar */
 .searchbar {
-  overflow: hidden;
-  background-color: #333;
+    overflow: hidden;
+    background-color: #333;
 }
 
 /* Style the links inside the navigation bar */
 .searchbar  {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 
 /* Style the search box inside the navigation bar */
 .searchbar input[type=text] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
 }
 
 .searchbar input[type=text] {
-  border: 1px solid #ccc;
+    border: 1px solid #ccc;
 }
- .recent aside {
+.recent aside {
     padding-left: 0.2rem;
     margin-left: 0.2rem;
     /*float: left;*/
     font-style: optima;
-   width: 500px;
-   height: 500px;
-  overflow: scroll;
-   border: 5px solid brown;
->>>>>>> ef5e0ef04f037660666fde8a22b5981e6ef3e257
+    width: 500px;
+    height: 500px;
+    overflow: scroll;
+    border: 5px solid brown;
+}
+.recent h2 {
+    font-family:Avenir;
+    font-size: 25px;
+    color: black;
+}
+.recent p.question {
+    color: black;
+}
+.recent p.answer{
+    color:darkslategray;
 }
 
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 20px;
-  text-align: center;
-  text-decoration: none;
-  margin: 2px 2px;
-  border-radius: 50%;
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 50%;
 }
 
 .fa-facebook {
-  background: #3B5998;
-  color: white;
+    background: #3B5998;
+    color: white;
 }
 
 .fa-twitter {
-  background: #55ACEE;
-  color: white;
+    background: #55ACEE;
+    color: white;
 }
 
 .fa-instagram {
-  background: #55ACEE;
-  color: white;
+    background: #E63F82;
+    color: white;
+}
+footer {
+    padding: 1.2px 0;
+    background: #add8e6;
+    font-family: "Fjalla One", Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    position: relative;
+    /*text-transform: uppercase;*/
+    /*text-align:center;*/
+    /* you probably need to add some extra styles here */
 }

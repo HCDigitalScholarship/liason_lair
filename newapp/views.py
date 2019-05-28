@@ -47,15 +47,27 @@ def research(request):
     return render(request, 'research.html',{})
 
 def addquestion(request):
+    #if request.method == 'POST':
+    #    form = ContactForm(request.POST)
+    #    if form.is_valid():
+    #        question = form.cleaned_data['question']
+    #        answer = form.cleaned_data['answer']
+    #        details = form.cleaned_data['details']
+    #        category = form.cleaned_data['category']
+    #form = QuestionForm()
+    #return render(request, 'addquestion.html',{'form':form})
+    #now = datetime.datetime.now()
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = Qform(request.POST)
         if form.is_valid():
             question = form.cleaned_data['question']
-            answer = form.cleaned_data['answer']
             details = form.cleaned_data['details']
-            category = form.cleaned_data['category']
-    form = QuestionForm()
-    return render(request, 'addquestion.html',{'form':form})
+            q = Question(question = question, details = details)
+            q.save()
+            return HttpResponse('Thanks')
+        else:
+            form = Qform()
+            return render(request, 'addquestion.html', {'form': form})
 
 def about(request):
     return render(request, 'about.html',{})

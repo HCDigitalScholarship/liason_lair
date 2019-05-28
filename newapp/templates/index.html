@@ -7,9 +7,9 @@
 {% block content %}
 
 
-{% if course %}
+<!--{% if course %}
 <h1>{{ course }}</h1>
-{% endif %}
+{% endif %}-->
 
 
 <!-- <form action="" method="post">
@@ -35,7 +35,7 @@
 </form>
 {% endif %} -->
 
-<form action="" method="post">
+<form action="" method="post"> 
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
