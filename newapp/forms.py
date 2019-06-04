@@ -13,8 +13,8 @@ class SearchForm(forms.Form):
 
 #<<<<<<< HEAD
 class Qform(ModelForm):
-    question = forms.CharField(label='Question', max_length=100)
-    details = forms.CharField(label='Details', max_length=1000)
+    question = forms.CharField(label='Question', max_length=1000, widget=forms.Textarea(attrs={"rows":1, "cols":40}))
+    details = forms.CharField(label='Details', max_length=1000, widget=forms.Textarea(attrs={"rows":5, "cols":40}))
     class Meta:
         model = Question
         fields = ['question', 'details']

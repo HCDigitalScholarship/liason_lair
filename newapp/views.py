@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from django.http import HttpResponse
 import datetime
-from newapp.models import Course, Question
+from newapp.models import Course, Question, Answer
 import random
 from .forms import ContactForm, QuestionForm, Qform
 # Create your views here.
@@ -47,16 +47,6 @@ def research(request):
     return render(request, 'research.html',{})
 
 def addquestion(request):
-    #if request.method == 'POST':
-    #    form = ContactForm(request.POST)
-    #    if form.is_valid():
-    #        question = form.cleaned_data['question']
-    #        answer = form.cleaned_data['answer']
-    #        details = form.cleaned_data['details']
-    #        category = form.cleaned_data['category']
-    #form = QuestionForm()
-    #return render(request, 'addquestion.html',{'form':form})
-    #now = datetime.datetime.now()
     if request.method == 'POST':
         form = Qform(request.POST)
         if form.is_valid():
@@ -68,6 +58,10 @@ def addquestion(request):
         else:
             form = Qform()
             return render(request, 'addquestion.html', {'form': form})
+    form = Qform()
+    all_questions = Question.objects.all()
+    all_answers= Answer.objects.all()
+    return render(request, 'addquestion.html', {'form': form, 'all_questions' : all_questions, 'all_answers' : all_answers})
 
 def about(request):
     return render(request, 'about.html',{})

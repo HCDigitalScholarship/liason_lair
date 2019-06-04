@@ -1,18 +1,49 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
 
 {% block header %}
-<h1> Ask a Question </h1>
-{% endblock %}
+<h1>Digital Scholarship Summer 2019</h1>
+{% endblock  %}
+
+
+<!-- <body>
+
+</body> -->
 
 {% block content %}
-<!--<div  style = "padding: 20px;">
-  {% crispy form form.helper %}
+<h2>Submit a Question</h2>
 
-  </div>-->
+<body>
 <form action="" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <input type="submit" value="Submit">
-  </form>
+    {% csrf_token %}
+    {% for field in form  %}
+      {{ field.label_tag }}
+      <br></br>
+      {{ field }}
+      <br></br>
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+<br></br>
+
+<div class="questions-no-a">
+  <h2>Unanswered Questions</h2>
+    {% for item in all_questions %}
+      <li>Question: {{ item.question }}</li>
+      <li>Details: {{ item.details }}
+      <br></br>
+    {% endfor %}
+</div>
+
+<div class="questions-a">
+  <h2>Answered Questions</h2>
+    {% for item in all_answers %}
+      <li>Question: {{ item.question }}</li>
+      <li>Answer: {{ item.answer_text }}
+      <li>Date Published: {{ item.pub_date }}</li>
+      <br></br>
+    {% endfor %}
+</div>
+
+
+</body>
 {% endblock %}
