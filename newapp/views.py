@@ -4,7 +4,8 @@ from django.http import HttpResponse
 import datetime
 from newapp.models import Course, Question, Answer
 import random
-from .forms import ContactForm, QuestionForm, Qform
+from .forms import ContactForm, QuestionForm, Qform, SearchForm, AnswerForm
+from django.db.models import Q
 # Create your views here.
 
 
@@ -40,11 +41,31 @@ def contact(request):
 
 def faq(request):
     now = datetime.datetime.now()
-    return render(request, 'faq.html', {'current_date': now})
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            # Get user data
+            query = form.cleaned_data['search']
+            # Can add more refined search algorithm here
+            #results = Answer.objects.filter(question__contains = query)
+            results = Answer.objects.filter(Q(answer_text__contains=query) | Q(question__contains=query))
+            # If no results come up, say that
+            if len(results) == 0:
+                search_status = "Your search returned no results"
+            else:
+                search_status = "Search results:"
+            return render(request, 'faq.html', {'current_date': now, 'all_questions' : results, 'form' : form, 'search_status' : search_status})
+    # If accessed without POST, render normal template with all FAQ
+    form = SearchForm()
+    all_questions = Answer.objects.all()
+    search_status = "All FAQ:"
+    return render(request, 'faq.html', {'current_date': now, 'all_questions' : all_questions, 'form' : form, 'search_status' : search_status})
 
 
 def research(request):
-    return render(request, 'research.html',{})
+    form = AnswerForm()
+    all_questions = Question.objects.all()
+    return render(request, 'research.html', {'form' : form, 'all_questions' : all_questions})
 
 def addquestion(request):
     if request.method == 'POST':
@@ -65,9 +86,6 @@ def addquestion(request):
 
 def about(request):
     return render(request, 'about.html',{})
-
-def faq(request):
-    return render(request, 'faq.html',{})
 
 def contact(request):
     if request.method == 'POST':

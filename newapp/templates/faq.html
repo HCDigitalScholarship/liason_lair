@@ -5,5 +5,25 @@
 {% endblock %}
 
 {% block content %}
+<body>
 
+<div>
+  <h2>Frequently Asked Questions</h2>
+
+  <form action="" method="post"  placeholder="Search Q/As">
+      {% csrf_token %}
+      {{ form }}
+      <br>
+      <br>
+      <input type="submit" value="Search">
+  </form>
+
+<h3>{{ search_status }}</h3>
+    {% for item in all_questions %}
+      <li>Question: {{ item.question }}</li>
+      <li>Answer: {{ item.answer_text }}
+      <br></br>
+    {% endfor %}
+</div>
+</body>
 {% endblock %}

@@ -29,7 +29,8 @@ class Question(models.Model):
 
 class Answer(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.ManyToManyField(Question)
+    #question = models.ManyToManyField(Question)
+    question = models.CharField(max_length=140, help_text='Question', default='Question default string')
     answer_text = models.CharField(max_length=3000, help_text='Answer Text')
     pub_date = models.DateTimeField('date published')
 

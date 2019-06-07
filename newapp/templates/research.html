@@ -6,4 +6,19 @@
 
 {% block content %}
 
+
+{% for item in all_questions %}
+  <li>Question: {{ item.question }}</li>
+  <li>Details: {{ item.details }}</li>
+  {% for field in form  %}
+    {{ field.label_tag }}
+    <form action="" method="post">
+      {{ field }}
+      <br></br>
+      <input type="submit" value="Submit">
+    </form>
+  {% endfor %}
+  <hr></hr>
+{% endfor %}
+
 {% endblock %}

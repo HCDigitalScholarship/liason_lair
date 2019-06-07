@@ -12,7 +12,6 @@
 {% block content %}
 <h2>Submit a Question</h2>
 
-<body>
 <form action="" method="post">
     {% csrf_token %}
     {% for field in form  %}
@@ -30,6 +29,9 @@
     {% for item in all_questions %}
       <li>Question: {{ item.question }}</li>
       <li>Details: {{ item.details }}
+      <form action="/research/">
+        <input type="submit" value="Answer Question"/>
+      </form>
       <br></br>
     {% endfor %}
 </div>

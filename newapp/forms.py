@@ -9,7 +9,10 @@ class CourseForm(forms.Form):
         model = Course
 
 class SearchForm(forms.Form):
-	search = forms.CharField(label='search', max_length=100)
+	search = forms.CharField(label='Search', max_length=100)
+
+class AnswerForm(forms.Form):
+	answer = forms.CharField(label='Answer', max_length=1000, widget=forms.Textarea(attrs={"rows":5, "cols":40}))
 
 #<<<<<<< HEAD
 class Qform(ModelForm):
@@ -37,8 +40,8 @@ class ContactForm(forms.Form):
 # want to be talking to Questions model, dunno if we can go crispy on this one
 class QuestionForm(forms.Form):
     question = forms.CharField(max_length=200)
-    answer = forms.CharField(label='Answer',widget=forms.TextInput(attrs={'placeholder': 'If you learned something, you can submit an answer.'}), required=False)
     details = forms.CharField(widget=forms.Textarea, required=False)
+    answer = forms.CharField(label='Answer',widget=forms.Textarea(attrs={'placeholder': 'If you learned something, you can submit an answer.'}), required=False, )
     category = forms.CharField()
     #want:    category = forms.ChoiceField(Category.objects.all()) #dunno if this will work
     def __init__(self, *args, **kwargs): #added user param...removed
