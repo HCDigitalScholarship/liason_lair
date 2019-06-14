@@ -23,8 +23,16 @@ class Question(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.CharField(max_length=140, help_text='Question')
     details = models.CharField(max_length=3000, help_text='Question Details', default='SOME STRING')
+    tags = models.ManyToManyField('Tag')
     #pub_date = models.DateTimeField('date published', default = 'DATE')
     pass
+
+class Tag(models.Model):
+    tag = subtags = models.CharField(max_length=140, blank=True, null=True)
+    subtags = models.ManyToManyField('Subtag')
+
+class Subtag(models.Model):
+    subtags = models.CharField(max_length=140)
 
 
 class Answer(models.Model):
